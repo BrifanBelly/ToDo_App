@@ -1,0 +1,63 @@
+<!-- Static navbar -->
+<nav class="navbar navbar-light" style="background-color: #e3f2fd;"  ng-controller="navController">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Brifan@yo.com</a>
+        </div>
+        <div id="navbar" ng-if="isAuth">
+            <ul class="nav navbar-nav"  >
+                <li ng-class="{active: isActive('/home')}"><a href="/home">Home</a></li>
+                <li ng-class="{active: isActive('/about')}" ><a href="/about">About</a></li>
+                <li ng-class="{active: isActive('/customres')}"><a href="/projects/customerapi">Customers</a></li>
+                <li ng-class="{active: isActive('/chat')}"><a href="/projects/chat">Chat</a></li>
+            </ul>
+        </div><!--/.nav-collapse -->
+        <ul class="nav navbar-nav pull-right" ng-if="!isAuth">
+            <li ng-class="{active: isActive('/signup')}" ><a href="/signup">Signup</a></li>
+            <li ng-class="{active: isActive('/signin')}" ><a href="/signin">Signin</a></li>
+        </ul>
+        <h6 class=" pull-right" ng-if="isAuth" ng-click="logout()" style="cursor: pointer" title="logout"  >Hi&nbsp&nbsp&nbsp<mark>{{isAuth}}</mark> </h6>
+
+    </div><!--/.container-fluid -->
+</nav>
+
+
+
+
+
+
+
+<div class="row">
+    <div class="col-xs-8 chat-window">
+        <ul>
+            <li ng-repeat="message in messages">
+                <span class="username">{{message.username}}</span>
+                <span class="message">{{message.message}}</span>
+            </li>
+        </ul>
+    </div>
+    <div class="col-xs-4 user-window">
+        <ul>
+            <li ng-repeat="user in users">{{user}}</li>
+        </ul>
+    </div>
+</div>
+<div class="row">
+    <form class="form-horizontal">
+        <div class="form-group">
+            <label for="chatInput" class="col-sm-1">Chat</label>
+            <div class="col-sm-8">
+                <input type="text" class="form-control" id="chatInput" placeholder="Enter Text Here..." ng-model="msg">
+            </div>
+            <div class="col-sm-3">
+                <button type="submit" class="btn btn-primary" ng-click="sendMessage(msg)">Send Message</button>
+            </div>
+        </div>
+    </form>
+</div>

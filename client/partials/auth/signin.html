@@ -1,0 +1,30 @@
+<div class="container">
+    <div class="col-sm-6 col-sm-offset-3">
+
+        <h1><span class="fa fa-sign-in"></span> Login</h1>
+
+        <div class="alert alert-danger" ng-if="message.length > 0">{{ message }}</div>
+
+
+        <!-- LOGIN FORM -->
+        <form>
+            <div class="form-group">
+                <label>Email</label>
+                <input type="text" class="form-control" ng-model="user.username">
+            </div>
+            <div class="form-group">
+                <label>Password</label>
+                <input type="password" class="form-control" ng-model="user.password">
+            </div>
+
+            <button type="submit" class="btn btn-warning btn-lg" ng-click="CheckUser()">Login</button>
+        </form>
+
+        <hr>
+
+        <p>Need an account? <a href="/signup">Signup</a></p>
+        <p>Or go <a href="/">home</a>.</p>
+
+
+    </div>
+</div>
