@@ -93,11 +93,11 @@ var auth = express.Router();
 require('./server/routes/authentication')(auth,passport);
 app.use('/auth',auth);
 
-/*
+
 app.get('/*', function(req, res) {
     res.render('index.ejs');
 });
-*/
+
 //make our app listen for incoming requests on the port assigned above
 http.listen(port, function() {
     console.log('SERVER RUNNING... PORT: ' + port);
