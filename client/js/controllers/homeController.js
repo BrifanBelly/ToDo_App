@@ -1,15 +1,15 @@
 myApp.controller('homeController', ['$scope', function($scope){
     $scope.myInterval = 4000;
     $scope.slides = [{
-        image: "img/bulb.jpg"
+        image: "img/s.jpg"
     },
     {
-        image: "img/green.jpg"
+        image: "img/wq.jpg"
     },
     {
-        image: "img/moutan.jpg"
+        image: "img/d.jpg"
     },
     {
-        image: "img/poles.jpg"
+        image: "img/q.jpg"
     }];
 }]);

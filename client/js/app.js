@@ -19,6 +19,7 @@ var myApp = angular.module('myApp', [
         $routeProvider.otherwise({redirectTo: '/home'});
         //new comment
         $locationProvider.html5Mode({enabled: true, requireBase: false});
+       // $locationProvider.html5Mode(true);
     }])
     .filter('startFrom', function(){
         return function(data, start){
