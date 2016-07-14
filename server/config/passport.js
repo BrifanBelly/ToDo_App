@@ -26,7 +26,7 @@ module.exports = function(passport){
             // asynchronous
             process.nextTick(function() {
                 User.findOne({ 'username' :  username }, function(err, user) {
-                   console.log('found user '+user);
+                  // console.log('found user '+user);
                     // if there are any errors, return the error
                     if (err)
                         return done(err);
@@ -64,7 +64,7 @@ module.exports = function(passport){
             // asynchronous
             process.nextTick(function() {
                 // if the user is not already logged in:
-              //  console.log('in doom');
+               // console.log('in doom '+username);
 
                     User.findOne({ 'username' :  username }, function(err, user) {
                         // if there are any errors, return the error
@@ -75,9 +75,10 @@ module.exports = function(passport){
                         if (user) {
                             return done(null, false);
                         } else {
+                           // console.log('creating new user');
 
                             // create the user
-                            var newUser            = new User();
+                            var newUser = new User();
 
                             newUser.username    = username;
                             newUser.password    = password;

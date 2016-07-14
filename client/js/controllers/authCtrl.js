@@ -7,8 +7,8 @@ myApp.controller('authController', ['$scope','$location','authService','ifauthSe
                 $location.url('/home');
             },
             function(err){
-                $scope.message = 'please enter a valid email id';
-               // bootbox.alert('Error: ' + err);
+                $scope.message = 'user already exist ';
+               // bootbox.alert('Error: ' );
             });
     };
 
